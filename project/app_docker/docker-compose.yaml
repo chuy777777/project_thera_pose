@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  app:
+    build: 
+      dockerfile: app_docker/Dockerfile
+      context: ../
+    image: chuy777/project_thera_pose:v1
+    container_name: project_thera_pose
+    env_file: ./../app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DISPLAY=$DISPLAY
+    privileged: true
+    volumes:
+      - volume_project_thera_pose:/app
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro    # UI
+      - /dev:/dev:ro                        # USB Devices
+    # ports:
+    #   - 5000:5000
+    networks:
+      - network_project_thera_pose
+
+volumes:
+  volume_project_thera_pose:
+    name: volume_project_thera_pose
+    external: false
+
+networks:
+  network_project_thera_pose:
+    name: network_project_thera_pose
+    external: true

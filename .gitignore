@@ -1,0 +1,8 @@
+__pycache__/
+project/app/.env 
+project/app/app_env
+project/app/calibration/files/*
+project/app/connection_db/temp/*
+project/app/images/patients/*
+project/db_docker/.env 
+project/db_docker/mongo_replication.key
