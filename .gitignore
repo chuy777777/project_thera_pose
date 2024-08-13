@@ -6,3 +6,4 @@ project/app/connection_db/temp/*
 project/app/images/patients/*
 project/db_docker/.env 
 project/db_docker/mongo_replication.key
+documents/
